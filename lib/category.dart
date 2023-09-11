@@ -10,7 +10,8 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 50,
+        backgroundColor: Colors.white,
         title: const Text(
           "Categories",
           style: TextStyle(
@@ -39,8 +40,8 @@ class CategoryPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(7),
             child: CircleAvatar(
-              backgroundImage:
-              NetworkImage('https://www.reuters.com/resizer/O-QT-6JbJVpU9G3EnvL_xPDI5S0=/960x1200/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7NBXJ3TU5JL7NHRRJJDS3U3WDY.jpg'),
+              backgroundImage:AssetImage('assets/images/user.jpg'),
+              
             ),
           ),
         ],
@@ -54,8 +55,9 @@ class CategoryPage extends StatelessWidget {
           ),
           itemBuilder: (context, index){
             return Padding(
+            
               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12),
-              child: CourseBox(),
+              child: Course(),
             );
           }
       ),

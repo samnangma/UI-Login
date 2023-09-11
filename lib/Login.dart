@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mylogin/category.dart';
 import 'package:mylogin/register.dart';
 import 'package:mylogin/widget/social.dart';
@@ -11,7 +12,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   void _loginButtonPressed() {
     Navigator.push(
       context,
@@ -20,8 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _registerButtonPressed() {
-
-     Navigator.push(
+    Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Register()),
     );
@@ -38,17 +37,17 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Text(
                 'Login',
-                style: TextStyle(
+                style: GoogleFonts.robotoSlab(
                   color: Colors.blue[400],
                   fontSize: 45,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text(
+              Text(
                 'Please login to your account.',
-                style: TextStyle(
+                style: GoogleFonts.robotoSlab(
                   color: Colors.black54,
-                  fontSize: 26,
+                  fontSize: 22,
                 ),
               ),
               SizedBox(
@@ -58,34 +57,36 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: "Email",
+                  hintStyle: GoogleFonts.robotoSlab(),
                 ),
               ),
               SizedBox(height: 20),
-           Stack(
-              alignment: Alignment.centerRight,
-              children: [
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: "Password"),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    // Handle forgot password
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      'Forgot Password ?',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+              Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(hintText: "Password",hintStyle: GoogleFonts.robotoSlab()),
+          
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Handle forgot password
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: Text(
+                        'Forgot Password?',
+                        style: GoogleFonts.robotoSlab(
+                          color: Colors.blue,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
               SizedBox(height: 46),
               Container(
                 width: double.infinity,
@@ -99,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Text(
                     "LOGIN",
-                    style: TextStyle(
+                    style: GoogleFonts.robotoSlab(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 26,
@@ -116,21 +117,20 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 50,
           color: Colors.white,
           alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Don\'t have an account? ',
-              ),
-              InkWell(
-                onTap: _registerButtonPressed,
-                child: Text(
-                  "Register",
-                  style: TextStyle(
-                    color: Colors.blue[600],
-                    fontSize: 20,
-                  ),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text(
+              'Don\'t have an account? ',
+            ),
+            InkWell(
+              onTap: _registerButtonPressed,
+              child: Text(
+                "Register",
+                style: TextStyle(
+                  color: Colors.blue[600],
+                  fontSize: 20,
                 ),
-              )
+              ),
+            )
           ]),
         ));
   }
