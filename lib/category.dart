@@ -49,37 +49,17 @@ class CategoryPage extends StatelessWidget {
 
       body: GridView.builder(
           shrinkWrap: true,
-          itemCount: 10,
+          itemCount: 12,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
           ),
           itemBuilder: (context, index){
             return Padding(
-            
               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12),
               child: Course(),
             );
           }
       ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-      ),
-
     );
   }
 }

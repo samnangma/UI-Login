@@ -23,10 +23,10 @@ class Course extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Icon(
-                Icons.computer,
+             Icon(
+                Icons.add_home_work,
                 size: 80,
-                color: Colors.blue,
+                color: Colors.blue[400],
               ),
               Container(
                 width: 200,
@@ -42,7 +42,7 @@ class Course extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Design",
+                            "Maketting",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
