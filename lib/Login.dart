@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mylogin/category.dart';
+import 'package:mylogin/register.dart';
 import 'package:mylogin/widget/social.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,12 +11,20 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  void _loginButtonPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => CategoryPage()),
+    );
+  }
+
+  void _registerButtonPressed() {
+
+     Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Register()),
+    );
   }
 
   @override
@@ -80,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 width: double.infinity,
                 child: RawMaterialButton(
-                  onPressed: () {},
+                  onPressed: _loginButtonPressed,
                   fillColor: Colors.blue[600],
                   elevation: 0.0,
                   padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -112,6 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Text('Don\'t have an account? ',
               ),
               InkWell(
+                onTap: _registerButtonPressed,
                 child: Text(
                   "Register",
                   style: TextStyle(
